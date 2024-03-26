@@ -1,3 +1,4 @@
+
 // Package miniredis is a pure Go Redis test server, for use in Go unittests.
 // There are no dependencies on system binaries, and every server you start
 // will be empty.
@@ -87,6 +88,9 @@ type connCtx struct {
 	subscriber       *Subscriber    // client is in PUBSUB mode if not nil
 	nested           bool           // this is called via Lua
 	nestedSHA        string         // set to the SHA of the nesting function
+}
+func (m *Miniredis) SetPort(port int) {
+	m.port = port
 }
 
 // NewMiniRedis makes a new, non-started, Miniredis object.
